@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "groundups-ng": "libs/packages/groundups-ng",
+    "groundups-ng-e2e": "apps/groundups-ng-e2e"
+  }
 }

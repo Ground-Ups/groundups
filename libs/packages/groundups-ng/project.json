@@ -1,0 +1,75 @@
+{
+  "projectType": "library",
+  "root": "libs/packages/groundups-ng",
+  "sourceRoot": "libs/packages/groundups-ng/src",
+  "prefix": "gs",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/packages/groundups-ng"],
+      "options": {
+        "project": "libs/packages/groundups-ng/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/packages/groundups-ng/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/packages/groundups-ng/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/packages/groundups-ng"],
+      "options": {
+        "jestConfig": "libs/packages/groundups-ng/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/packages/groundups-ng/src/**/*.ts",
+          "libs/packages/groundups-ng/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/packages/groundups-ng/.storybook"
+        },
+        "projectBuildConfig": "groundups-ng:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/groundups-ng",
+        "config": {
+          "configFolder": "libs/packages/groundups-ng/.storybook"
+        },
+        "projectBuildConfig": "groundups-ng:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

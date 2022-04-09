@@ -92,3 +92,10 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+
+npx create-nx-workspace
+npm i -D @nrwl/angular
+npm i -D @nrwl/storybook
+nx g @nrwl/angular:lib groundups-ng --directory=packages --publishable --importPath=@groundups/groundups-ng
+nx g @nrwl/angular:directive button/button --project=groundups-ng

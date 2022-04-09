@@ -1,0 +1,45 @@
+{
+  "root": "libs/packages/groundups-react",
+  "sourceRoot": "libs/packages/groundups-react/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/packages/groundups-react",
+        "tsConfig": "libs/packages/groundups-react/tsconfig.lib.json",
+        "project": "libs/packages/groundups-react/package.json",
+        "entryFile": "libs/packages/groundups-react/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/packages/groundups-react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/packages/groundups-react/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/packages/groundups-react"],
+      "options": {
+        "jestConfig": "libs/packages/groundups-react/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -99,3 +99,6 @@ npm i -D @nrwl/angular
 npm i -D @nrwl/storybook
 nx g @nrwl/angular:lib groundups-ng --directory=packages --publishable --importPath=@groundups/groundups-ng
 nx g @nrwl/angular:directive button/button --project=groundups-ng
+
+npm install --save-dev @nrwl/react
+nx g @nrwl/react:lib groundups-react --directory=packages --publishable --importPath=@groundups/groundups-react

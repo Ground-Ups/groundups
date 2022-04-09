@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@groundups/groundups-ng": ["libs/packages/groundups-ng/src/index.ts"]
+      "@groundups/groundups-ng": ["libs/packages/groundups-ng/src/index.ts"],
+      "@groundups/groundups-react": [
+        "libs/packages/groundups-react/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

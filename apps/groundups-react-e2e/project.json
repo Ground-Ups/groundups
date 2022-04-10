@@ -1,0 +1,28 @@
+{
+  "root": "apps/groundups-react-e2e",
+  "sourceRoot": "apps/groundups-react-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/groundups-react-e2e/cypress.json",
+        "devServerTarget": "groundups-react:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "groundups-react:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/groundups-react-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["groundups-react"]
+}

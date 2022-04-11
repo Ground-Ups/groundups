@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "ngcc --properties es2015 browser module main",
-    "ng-story": "nx run groundups-ng:storybook",
+    "ng-story": "nx run storybook-ng:storybook",
     "react-story": "nx run groundups-react:storybook"
   },
   "private": true,

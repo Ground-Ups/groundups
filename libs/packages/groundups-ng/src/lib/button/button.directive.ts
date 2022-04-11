@@ -1,10 +1,17 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[gsButton]'
 })
-export class ButtonDirective {
+export class ButtonDirective implements OnChanges {
 
-  constructor() { }
+  @Input()
+  color: any;
 
+  constructor(
+    private element: ElementRef
+  ) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.element.nativeElement.style.backgroundColor = this.color;
+  }
 }

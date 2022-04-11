@@ -3,6 +3,7 @@
   "projects": {
     "groundups-ng": "libs/packages/groundups-ng",
     "groundups-react": "libs/packages/groundups-react",
-    "storybook-ng": "apps/storybook-ng"
+    "storybook-ng": "apps/storybook-ng",
+    "storybook-react": "apps/storybook-react"
   }
 }

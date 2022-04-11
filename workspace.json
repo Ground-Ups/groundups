@@ -2,7 +2,8 @@
   "version": 2,
   "projects": {
     "groundups-ng": "libs/packages/groundups-ng",
-    "groundups-ng-e2e": "apps/groundups-ng-e2e",
-    "groundups-react": "libs/packages/groundups-react"
+    "groundups-react": "libs/packages/groundups-react",
+    "storybook-ng": "apps/storybook-ng",
+    "storybook-react": "apps/storybook-react"
   }
 }

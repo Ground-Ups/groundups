@@ -96,9 +96,12 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 npx create-nx-workspace
 npm i -D @nrwl/angular
+npm i -D @nrwl/react
 npm i -D @nrwl/storybook
-nx g @nrwl/angular:lib groundups-ng --directory=packages --publishable --importPath=@groundups/groundups-ng
-nx g @nrwl/angular:directive button/button --project=groundups-ng
 
-npm install --save-dev @nrwl/react
+nx g @nrwl/angular:lib groundups-ng --directory=packages --publishable --importPath=@groundups/groundups-ng
+nx g @nrwl/angular:storybook-configuration groundups-ng
+nx g @nrwl/angular:component components/button --project=groundups-ng
+
 nx g @nrwl/react:lib groundups-react --directory=packages --publishable --importPath=@groundups/groundups-react
+nx g @nrwl/react:storybook-configuration groundups-react

@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: $g-base-font-family;
+  font-size: $g-base-font-size;
+  font-weight: $g-base-font-weight;
+  line-height: $g-base-line-height;
+  color: $g-base-font-color;
+  background-color: $g-body-bg-color;
+}
+
+button,
+input,
+select,
+textarea {
+  border-radius: 0;
+  background-color: transparent;
+  font: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+select option {
+  background-color: white;
+  color: black;
+}
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 0;
+}
+[hidden] {
+  display: none !important;
+}
+
+
+svg:not(:root) {
+  overflow: visible;
+}
+
+small {
+  font-size: inherit;
+}
+
+cite, var, address, dfn {
+  font-style: inherit;
+}
+a {
+  color: $g-link-font-color;
+  text-decoration: $g-link-text-decoration;
+
+  &:hover,
+  &:focus {
+    text-decoration: $g-link-text-decoration-hover;
+  }
+
+  &:focus {
+    outline: thin dotted;
+    outline-offset: -2px;
+  }
+}
+
+p {
+  margin: 0 ;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  height: 1px;
+  background-color: $g-hr-color;
+}
+
+strong {
+  font-weight: 700;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration-color: $g-abbr-border-color;
+}
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+

@@ -1,7 +1,132 @@
-@import
-"groundups/colors",
-"groundups/variables";
 
-// Globals
-@import
-"groundups/globals";
+$primary-green:            #097D5D !default;
+$primary-dark:             #24252C !default;
+$secondary-purple:         #474496 !default;
+$secondary-blue:           #0758CE !default;
+$secondary-yellow:         #F39F1D !default;
+$secondary-green:          #26994B !default;
+$secondary-red:            #D40022 !default;
+
+
+$color:(
+  "primary-green":$primary-green,
+  "primary-dark":$primary-dark,
+  "secondary-purple":$secondary-purple,
+  "secondary-blue":$secondary-blue,
+  "secondary-yellow":$secondary-yellow,
+  "secondary-green":$secondary-green,
+  "secondary-red":$secondary-red
+);
+:root{
+  @each $key, $value in $color{
+    @if($key == 'secondary-purple' or $key =='secondary-blue' or $key =='secondary-red'){
+      /*Dark*/
+      $colorCode: $value;
+      $shade: 70;
+      @for $i from 1 through 4{
+        $new: darken($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade+10;
+      }
+
+      /*Light*/
+      $colorCode: $value;
+      $shade: 50;
+      @for $i from 1 through 5{
+        $new: lighten($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade - 10;
+      }
+    }
+
+
+    @if($key == 'primary-dark'){
+      /*Dark*/
+      $colorCode: $value;
+      $shade: 100;
+      @for $i from 1 through 1{
+        $new: darken($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade+10;
+      }
+
+      /*Light*/
+      $colorCode: $value;
+      $shade: 80;
+      @for $i from 1 through 8{
+        $new: lighten($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade - 10;
+      }
+    }
+    @if($key == 'primary-green'){
+      /*Dark*/
+      $colorCode: $value;
+      $shade: 90;
+      @for $i from 1 through 2{
+        $new: darken($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade+10;
+      }
+
+      /*Light*/
+      $colorCode: $value;
+      $shade: 70;
+      @for $i from 1 through 7{
+        $new: lighten($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade - 10;
+      }
+    }
+    @if($key == 'secondary-yellow'){
+      /*Dark*/
+      $colorCode: $value;
+      $shade: 60;
+      @for $i from 1 through 5{
+        $new: darken($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade+10;
+      }
+
+      /*Light*/
+      $colorCode: $value;
+      $shade: 40;
+      @for $i from 1 through 4{
+        $new: lighten($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade - 10;
+      }
+    }
+    @if($key == 'secondary-green'){
+      /*Dark*/
+      $colorCode: $value;
+      $shade: 80;
+      @for $i from 1 through 3{
+        $new: darken($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade+10;
+      }
+
+      /*Light*/
+      $colorCode: $value;
+      $shade: 60;
+      @for $i from 1 through 6{
+        $new: lighten($colorCode, 10%);
+        $colorCode : $new;
+        --color-#{$key}-#{$shade}:#{$colorCode};
+        $shade:$shade - 10;
+      }
+    }
+    --color-#{$key}:#{$value};
+  }
+
+}

@@ -1,7 +1,39 @@
-@import
-"groundups/colors",
-"groundups/variables";
+// Global stylesheet where import all other stylesheets
 
-// Globals
-@import
-"groundups/globals";
+// Variable
+@import "variables/variables";
+
+// Functions
+@import "functions/index";
+/*
+
+// Mixins
+@import "mixins/mixins";
+
+// Fonts
+@import "fonts/fonts";
+
+// Icon Fonts
+@import "icon-fonts/icon-fonts";
+
+// Base
+@import "base/base";
+
+// Themes
+@import "themes/themes";
+
+// Pages
+@import "pages/pages";
+
+// Components
+@import "components/components";
+
+// Utilities
+@import "utilities/utilities";
+*/
+
+
+// test functions
+.test{
+  color: color-light($primary-green,10);
+}

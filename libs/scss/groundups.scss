@@ -5,7 +5,6 @@
 
 // Functions
 @import "functions/index";
-/*
 
 // Mixins
 @import "mixins/mixins";
@@ -27,13 +26,14 @@
 
 // Components
 @import "components/components";
-
 // Utilities
 @import "utilities/utilities";
-*/
+
 
 
 // test functions
 .test{
   color: color-light($primary-green,10);
+  font-size: headline();
 }
+

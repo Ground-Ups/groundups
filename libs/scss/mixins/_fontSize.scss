@@ -1,21 +1,21 @@
+@use "sass:math";
 @function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value , ($value * (0 + 1)));
 }
-
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
     $u1: unit($min-vw);
     $u2: unit($max-vw);
     $u3: unit($min-font-size);
     $u4: unit($max-font-size);
-  
+
     @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
         & {
-    
+
             font-size: $min-font-size;
             @media screen and (min-width: $min-vw) {
                 font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
             }
-    
+
             @media screen and (min-width: $max-vw) {
                 font-size: $max-font-size;
             }
@@ -29,9 +29,31 @@ $min_font: 16px;
 $max_font: 22px;
 
 
-// How to Use   
+// How to Use
 
+/*
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
-  
+*/
+
+
+$typography_varient:(
+  "Headline":$primary-green,
+  "Sub Heading":$primary-dark,
+  "CTA Title":$secondary-purple,
+  "Bodye":$secondary-blue,
+  "Title":$secondary-yellow,
+  "Sub Title":$secondary-green,
+  "Paragraph":$secondary-red
+);
+
+@function paragraph(){
+  @return $base-font-size;
+}
+@function subtitle(){
+  @return math.ceil(paragraph()*$font-ratio);
+}
+@function subtitle(){
+  @return subtitle()*$font-ratio;
+}

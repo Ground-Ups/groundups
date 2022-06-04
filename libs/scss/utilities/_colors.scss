@@ -1,0 +1,170 @@
+@each $key, $value in $color{
+  .text-#{$key}{
+    color:#{$value}
+  };
+  @if($key == 'secondary-purple' or $key =='secondary-blue' or $key =='secondary-red'){
+    /*Dark*/
+    $colorCode: $value;
+    $shade: $shade-ratio;
+    @for $i from 1 through 4{
+      $new: darken($colorCode, 10%);
+      $colorCode : $new;
+      .text-dark-#{$key}-#{$shade}{
+        color:#{$colorCode};
+      }
+      .bg-dark-#{$key}-#{$shade}{
+        background-color:#{$colorCode};
+      }
+      $shade:$shade+$shade-ratio;
+    }
+
+    /*Light*/
+    $colorCode: $value;
+    $tint: $tint-ratio;
+    @for $i from 1 through 5{
+      $new: lighten($colorCode, 10%);
+      $colorCode : $new;
+
+      .text-light-#{$key}-#{$tint}{
+        color:#{$colorCode};
+      }
+      .bg-light-#{$key}-#{$tint}{
+        background-color:#{$colorCode};
+      }
+      $tint:$tint + $tint-ratio;
+    }
+  }
+
+
+  @if($key == 'primary-dark'){
+    /*Dark*/
+    $colorCode: $value;
+    $shade: $shade-ratio;
+    @for $i from 1 through 1{
+      $new: darken($colorCode, 10%);
+      $colorCode : $new;
+      .text-dark-#{$key}-#{$shade}{
+        color:#{$colorCode};
+      }
+      .bg-dark-#{$key}-#{$shade}{
+        background-color:#{$colorCode};
+      }
+      $shade:$shade+ $shade-ratio;
+    }
+
+    /*Light*/
+    $colorCode: $value;
+    $tint: $tint-ratio;
+    @for $i from 1 through 8{
+      $new: lighten($colorCode, 10%);
+      $colorCode : $new;
+
+      .text-light-#{$key}-#{$tint}{
+        color:#{$colorCode};
+      }
+      .bg-light-#{$key}-#{$tint}{
+        background-color:#{$colorCode};
+      }
+      $tint:$tint + $tint-ratio;
+    }
+  }
+  @if($key == 'primary-green'){
+    /*Dark*/
+    $colorCode: $value;
+    $shade: $shade-ratio;
+    @for $i from 1 through 2{
+      $new: darken($colorCode, 10%);
+      $colorCode : $new;
+      .text-dark-#{$key}-#{$shade}{
+        color:#{$colorCode};
+      }
+      .bg-dark-#{$key}-#{$shade}{
+        background-color:#{$colorCode};
+      }
+      $shade:$shade+$shade-ratio;
+    }
+
+    /*Light*/
+
+    $colorCode: $value;
+    $tint: $tint-ratio;
+    @for $i from 1 through 7{
+      $new: lighten($colorCode, 10%);
+      $colorCode : $new;
+
+      .text-light-#{$key}-#{$tint}{
+        color:#{$colorCode};
+      }
+      .bg-light-#{$key}-#{$tint}{
+        background-color:#{$colorCode};
+      }
+      $tint:$tint + $tint-ratio;
+    }
+  }
+  @if($key == 'secondary-yellow'){
+    /*Dark*/
+    $colorCode: $value;
+    $shade: $shade-ratio;
+    @for $i from 1 through 5{
+      $new: darken($colorCode, 10%);
+      $colorCode : $new;
+      .text-dark-#{$key}-#{$shade}{
+        color:#{$colorCode};
+      }
+      .bg-dark-#{$key}-#{$shade}{
+        background-color:#{$colorCode};
+      }
+      $shade:$shade+$shade-ratio;
+    }
+
+    /*Light*/
+    $colorCode: $value;
+    $tint: $tint-ratio;
+    @for $i from 1 through 4{
+      $new: lighten($colorCode, 10%);
+      $colorCode : $new;
+
+      .text-light-#{$key}-#{$tint}{
+        color:#{$colorCode};
+      }
+      .bg-light-#{$key}-#{$tint}{
+        background-color:#{$colorCode};
+      }
+      $tint:$tint + $tint-ratio;
+    }
+  }
+  @if($key == 'secondary-green'){
+    /*Dark*/
+    $colorCode: $value;
+    $shade: $shade-ratio;
+    @for $i from 1 through 3{
+      $new: darken($colorCode, 10%);
+      $colorCode : $new;
+      .text-dark-#{$key}-#{$shade}{
+        color:#{$colorCode};
+      }
+      .bg-dark-#{$key}-#{$shade}{
+        background-color:#{$colorCode};
+      }
+      $shade:$shade+$shade-ratio;
+    }
+
+    /*Light*/
+    $colorCode: $value;
+    $tint: $tint-ratio;
+    @for $i from 1 through 6{
+      $new: lighten($colorCode, 10%);
+      $colorCode : $new;
+
+      .text-light-#{$key}-#{$tint}{
+        color:#{$colorCode};
+      }
+      .bg-light-#{$key}-#{$tint}{
+        background-color:#{$colorCode};
+      }
+
+      $tint:$tint + $tint-ratio;
+    }
+  }
+
+}

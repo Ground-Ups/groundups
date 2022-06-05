@@ -33,7 +33,9 @@
 
 // test functions
 .test{
-  color: color-light($primary-green,10);
-  font-size: headline();
+  @include grid($t-columns: 50px 1fr, $t-rows: 10px);
+  @include fluid-type(320px, 1000px, 16px, 22px);
+  color: color-light($secondary-green,10);
+  font-size: body();
 }
 

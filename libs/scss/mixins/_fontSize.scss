@@ -13,7 +13,7 @@
 
             font-size: $min-font-size;
             @media screen and (min-width: $min-vw) {
-                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+              font-size: $min_font; //need to add responsive
             }
 
             @media screen and (min-width: $max-vw) {
@@ -37,23 +37,32 @@ html {
 }
 */
 
-
-$typography_varient:(
-  "Headline":$primary-green,
-  "Sub Heading":$primary-dark,
-  "CTA Title":$secondary-purple,
-  "Bodye":$secondary-blue,
-  "Title":$secondary-yellow,
-  "Sub Title":$secondary-green,
-  "Paragraph":$secondary-red
-);
-
 @function paragraph(){
   @return $base-font-size;
 }
 @function subtitle(){
-  @return math.ceil(paragraph()*$font-ratio);
+  $newSize:paragraph()*$font-ratio;
+  @return math.round($newSize);
 }
-@function subtitle(){
-  @return subtitle()*$font-ratio;
+@function title(){
+  $newSize:subtitle()*$font-ratio;
+  @return math.round($newSize);
+}
+@function body(){
+  $newSize:title()*$font-ratio;
+  @return math.round($newSize);
+}
+@function cta_title(){
+  $newSize:body()*$font-ratio;
+  @return math.round($newSize+1);
+}
+
+
+@function sub_heading(){
+  $newSize:cta_title()*$font-ratio;
+  @return math.round($newSize);
+}
+@function headline(){
+  $newSize:sub_heading()*$font-ratio;
+  @return math.round($newSize);
 }

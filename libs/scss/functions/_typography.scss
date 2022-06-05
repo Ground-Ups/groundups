@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@function paragraph(){
+  @return $base-font-size;
+}
+@function subtitle(){
+  $newSize:paragraph()*$font-ratio;
+  @return math.round($newSize);
+}
+@function title(){
+  $newSize:subtitle()*$font-ratio;
+  @return math.round($newSize);
+}
+@function body(){
+  $newSize:title()*$font-ratio;
+  @return math.round($newSize);
+}
+@function cta_title(){
+  $newSize:body()*$font-ratio;
+  @return math.round($newSize+1);
+}
+
+
+@function sub_heading(){
+  $newSize:cta_title()*$font-ratio;
+  @return math.round($newSize);
+}
+@function headline(){
+  $newSize:sub_heading()*$font-ratio;
+  @return math.round($newSize);
+}

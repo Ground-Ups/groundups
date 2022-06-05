@@ -1,0 +1,6 @@
+@function color-dark($name, $value){
+  @return darken($name ,$value);
+}
+@function color-light($name, $value){
+  @return lighten($name ,$value);
+}

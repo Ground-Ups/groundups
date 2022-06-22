@@ -28,14 +28,3 @@
 @import "components/components";
 // Utilities
 @import "utilities/utilities";
-
-
-
-// test functions
-.test{
-  @include grid($t-columns: 50px 1fr, $t-rows: 10px);
-  @include fluid-type(320px, 1000px, 16px, 22px);
-  color: color-light($secondary-green,10);
-  font-size: body();
-}
-

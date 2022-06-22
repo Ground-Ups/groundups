@@ -2,7 +2,10 @@
   .text-#{$key}{
     color:#{$value}
   };
-  @if($key == 'secondary-purple' or $key =='secondary-blue' or $key =='secondary-red'){
+  .bg-#{$key}{
+    background-color:#{$value}
+  };
+  @if($key == 'secondary-purple' or $key =='info' or $key =='danger'){
     /*Dark*/
     $colorCode: $value;
     $shade: $shade-ratio;
@@ -36,7 +39,7 @@
   }
 
 
-  @if($key == 'primary-dark'){
+  @if($key == 'brand-dark'){
     /*Dark*/
     $colorCode: $value;
     $shade: $shade-ratio;
@@ -68,7 +71,7 @@
       $tint:$tint + $tint-ratio;
     }
   }
-  @if($key == 'primary-green'){
+  @if($key == 'brand'){
     /*Dark*/
     $colorCode: $value;
     $shade: $shade-ratio;
@@ -101,7 +104,7 @@
       $tint:$tint + $tint-ratio;
     }
   }
-  @if($key == 'secondary-yellow'){
+  @if($key == 'warning'){
     /*Dark*/
     $colorCode: $value;
     $shade: $shade-ratio;
@@ -133,7 +136,7 @@
       $tint:$tint + $tint-ratio;
     }
   }
-  @if($key == 'secondary-green'){
+  @if($key == 'success'){
     /*Dark*/
     $colorCode: $value;
     $shade: $shade-ratio;

@@ -1,21 +1,21 @@
 // Colors
-$primary-green:            #097D5D !default;
-$primary-dark:             #24252C !default;
+$brand:            #097D5D !default;
+$brand-dark:             #24252C !default;
 $secondary-purple:         #474496 !default;
-$secondary-blue:           #0758CE !default;
-$secondary-yellow:         #F39F1D !default;
-$secondary-green:          #26994B !default;
-$secondary-red:            #D40022 !default;
+$info:           #0758CE !default;
+$warning:         #F39F1D !default;
+$success:          #26994B !default;
+$danger:            #D40022 !default;
 
 
 $color:(
-  "primary-green":$primary-green,
-  "primary-dark":$primary-dark,
+  "brand":$brand,
+  "brand-dark":$brand-dark,
   "secondary-purple":$secondary-purple,
-  "secondary-blue":$secondary-blue,
-  "secondary-yellow":$secondary-yellow,
-  "secondary-green":$secondary-green,
-  "secondary-red":$secondary-red
+  "info":$info,
+  "warning":$warning,
+  "success":$success,
+  "danger":$danger
 );
 
 $shade-ratio: 10 !default;
